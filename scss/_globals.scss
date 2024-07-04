@@ -2,7 +2,7 @@ body {
   font-family: var(--font-family-base);
   font-weight: 400;
   font-size: 18px;
-  line-height: 1.28px;
+  line-height: normal;
   color: var(--color-light);
 }
 
@@ -19,5 +19,5 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
+  font-weight: 400;
 }

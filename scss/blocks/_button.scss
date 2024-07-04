@@ -1,0 +1,13 @@
+.button {
+  background-color: var(--color-dark);
+  color: var(--color-yellow);
+  padding: 19px 50px;
+  font-size: 24px;
+  font-weight: 700;
+  border: 0;
+
+  &:hover {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+  }
+}

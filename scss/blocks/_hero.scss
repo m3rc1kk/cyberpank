@@ -1,0 +1,30 @@
+.hero {
+  min-height: 1000px;
+  background-image: url("../../images/Hero/1.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__inner {
+    height: 1000px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+    align-items: start;
+    padding: 70px;
+    background-color: var(--color-yellow);
+    color: var(--color-dark);
+  }
+
+  &__title {
+    font-family: var(--font-family-alt);
+    font-size: 62px;
+    max-width: 484px;
+  }
+}
