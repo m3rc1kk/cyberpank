@@ -1,11 +1,13 @@
 body {
-  @include fluid-text(16, 18);
-
   font-family: var(--font-family-base);
   font-weight: 400;
   font-size: 18px;
   line-height: normal;
   color: var(--color-light);
+}
+
+p {
+  @include fluid-text(16, 18);
 }
 
 a,
@@ -23,5 +25,7 @@ a {
 h1, h2, h3, h4, h5, h6 {
   @include fluid-text(30, 62);
   
+  font-family: var(--font-family-alt);
   font-weight: 400;
+  
 }

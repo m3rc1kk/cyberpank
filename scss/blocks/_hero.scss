@@ -37,12 +37,9 @@
   }
 
   &__title {
-    font-family: var(--font-family-alt);
-    
     max-width: 484px;
     
     @include mobile {
-      
       text-align: center;
     }
   }

@@ -41,10 +41,6 @@
     max-width: 952px;
     line-height: 1.5;
     
-    p span {
-      font-weight: 700;
-      color: var(--color-blue);
-    }
 
     @include tablet {
       max-width: 788px;

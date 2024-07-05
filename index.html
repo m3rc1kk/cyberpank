@@ -16,37 +16,37 @@
 
       <ul class="header__social-list">
         <li class="header__social-item">
-          <a href="" class="header__social-link">
+          <a href="#" class="header__social-link">
             <img src="./images/Header/1.svg" alt="" width="30" height="30" loading="lazy" class="header__social-image">
           </a>
         </li>
 
         <li class="header__social-item">
-          <a href="" class="header__social-link">
+          <a href="#" class="header__social-link">
             <img src="./images/Header/2.svg" alt="" width="30" height="30" loading="lazy" class="header__social-image">
           </a>
         </li>
 
         <li class="header__social-item">
-          <a href="" class="header__social-link">
+          <a href="#" class="header__social-link">
             <img src="./images/Header/3.svg" alt="" width="30" height="30" loading="lazy" class="header__social-image">
           </a>
         </li>
 
         <li class="header__social-item">
-          <a href="" class="header__social-link">
+          <a href="#" class="header__social-link">
             <img src="./images/Header/4.svg" alt="" width="30" height="30" loading="lazy" class="header__social-image">
           </a>
         </li>
 
         <li class="header__social-item">
-          <a href="" class="header__social-link">
+          <a href="#" class="header__social-link">
             <img src="./images/Header/5.svg" alt="" width="30" height="30" loading="lazy" class="header__social-image">
           </a>
         </li>
 
         <li class="header__social-item">
-          <a href="" class="header__social-link">
+          <a href="#" class="header__social-link">
             <img src="./images/Header/6.svg" alt="" width="30" height="30" loading="lazy" class="header__social-image">
           </a>
         </li>
@@ -59,7 +59,7 @@
       <div class="hero__inner container">
         <div class="hero__body">
           <h1 class="hero__title">Доступно на всех платформах</h1>
-          <button class="hero__button button">Узнать больше</button>
+          <button type="button" class="hero__button button">Узнать больше</button>
         </div>
       </div>
     </section>
@@ -68,7 +68,7 @@
       <div class="about-game__inner container">
         <h1 class="about-game__title">Найт-Сити изменит тебя навсегда!</h1>
         <div class="about-game__description">
-          <p><span>Cyberpunk 2077</span> — приключенческая ролевая игра, действие которой происходит в мегаполисе Найт-Сити, где власть, роскошь и модификации тела ценятся выше всего. Ты играешь за V, наёмника в поисках устройства, позволяющего обрести бессмертие. Ты сможешь менять киберимпланты, навыки и стиль игры своего персонажа, исследуя открытый мир, где твои поступки влияют на ход сюжета и всё, что тебя окружает.</p>
+          <p><span class="emphasis">Cyberpunk 2077</span> — приключенческая ролевая игра, действие которой происходит в мегаполисе Найт-Сити, где власть, роскошь и модификации тела ценятся выше всего. Ты играешь за V, наёмника в поисках устройства, позволяющего обрести бессмертие. Ты сможешь менять киберимпланты, навыки и стиль игры своего персонажа, исследуя открытый мир, где твои поступки влияют на ход сюжета и всё, что тебя окружает.</p>
         </div>
 
         <ul class="about-game__list">
@@ -87,6 +87,41 @@
             </li>
           </div>
         </ul>
+      </div>
+    </section>
+
+    <section class="raffle">
+      <div class="raffle__inner container">
+        <header class="raffle__header">
+          <img src="./images/Raffle/1.svg" alt="" width="132" height="132" class="raffle__header-image">
+          <h1 class="raffle__title" >Играй и выигрывай!</h1>
+        </header>
+
+        <div class="raffle__description">
+            <p>Играй в <span class="emphasis">Cyberpunk 2077</span> и получи возможность выиграть консоль <span class="emphasis">Xbox Series X</span> или <span class="emphasis">Sony PlayStation 5!</span> Заполни форму ниже и приложи скриншот о покупке. Итоги розыгрыша будут подведены 1 февраля. Удачи! ;)</p>
+        </div>
+
+        <div class="raffle__body">
+          <form action="" class="raffle__form">
+            <input class="raffle__input-text input" type="text" placeholder="Как тебя зовут?">
+            <input class="raffle__input-email input" type="email" placeholder="Твой e-mail">
+            <div class="raffle__file">
+              <input class="raffle__input-file visually-hidden" id="raffle-input" type="file">
+              <label for="raffle-input" class="raffle__file-label">Прикрепить скриншот <br><span class="raffle__label-extensions">png / .jpg / .pdf</span></label>
+            </div>
+            <button type="submit" class="raffle__button button">Отправить</button>
+            <div class="raffle__check">
+              <input type="checkbox" id="raffle-checkbox" class="raffle__input-checkbox--real visually-hidden">
+              <span class="raffle__input-checkbox"></span>
+              <label for="raffle-checkbox" class="raffle__checkbox-label">Согласен на обработку персональных данных
+              </label>
+            </div>
+          </form>
+          <div class="raffle__images">
+            <img src="./images/Raffle/xbox.png" alt="" width="460" height="456" class="raffle__xbox">
+            <img src="./images/Raffle/playstation.png" alt="" width="460" height="456" class="raffle__playstation">
+          </div>
+        </div>
       </div>
     </section>
   </main>

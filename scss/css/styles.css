@@ -1,14 +1,5 @@
 @charset "UTF-8";
 /**
-  Нормализация блочной модели
- */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/**
   Убираем внутренние отступы слева тегам списков,
   у которых есть атрибут class
  */
@@ -164,6 +155,25 @@ svg * {
   margin-inline: auto;
 }
 
+.emphasis {
+  color: var(--color-blue);
+  font-weight: 700;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 :root {
   --color-dark: #000000;
   --color-gray: #777777;
@@ -182,14 +192,6 @@ svg * {
 }
 
 /*
-
-@mixin abs-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-}
-
 @mixin square($size) {
   width: $size;
   aspect-ratio: 1;
@@ -197,12 +199,15 @@ svg * {
 
 */
 body {
-  font-size: clamp(16px, 0.9375vw, 18px);
   font-family: var(--font-family-base);
   font-weight: 400;
   font-size: 18px;
   line-height: normal;
   color: var(--color-light);
+}
+
+p {
+  font-size: clamp(16px, 0.9375vw, 18px);
 }
 
 a,
@@ -219,6 +224,7 @@ a {
 
 h1, h2, h3, h4, h5, h6 {
   font-size: clamp(30px, 3.2291666667vw, 62px);
+  font-family: var(--font-family-alt);
   font-weight: 400;
 }
 
@@ -269,6 +275,23 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--color-light);
     color: var(--color-dark);
   }
+}
+
+.input {
+  color: var(--color-light);
+  font-weight: 300;
+  border: 0;
+  border-bottom: var(--border-bottom);
+  background-color: var(--color-dark);
+  padding: 13px 0 13px 0;
+  width: 460px;
+  outline: none;
+}
+.input::-moz-placeholder {
+  color: var(--color-light);
+}
+.input::placeholder {
+  color: var(--color-light);
 }
 
 .header {
@@ -347,7 +370,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 .hero__title {
-  font-family: var(--font-family-alt);
   max-width: 484px;
 }
 @media (max-width: 768px) {
@@ -403,10 +425,6 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 952px;
   line-height: 1.5;
 }
-.about-game__description p span {
-  font-weight: 700;
-  color: var(--color-blue);
-}
 @media (max-width: 1024px) {
   .about-game__description {
     max-width: 788px;
@@ -420,4 +438,221 @@ h1, h2, h3, h4, h5, h6 {
   .about-game__image-large {
     width: 952px;
   }
+}
+
+.raffle {
+  background-color: var(--color-dark);
+  position: relative;
+  padding-block: 70px;
+}
+.raffle::before {
+  content: "";
+  position: absolute;
+  top: -69px;
+  left: 0;
+  background-image: url("../../images/Raffle/decoration.png");
+  width: 100%;
+  height: 70px;
+}
+.raffle::after {
+  content: "";
+  position: absolute;
+  bottom: -69px;
+  left: 0;
+  background-image: url("../../images/Raffle/decoration2.png");
+  width: 100%;
+  height: 70px;
+}
+.raffle__header {
+  display: flex;
+  align-items: end;
+  -moz-column-gap: 32px;
+       column-gap: 32px;
+}
+@media (max-width: 1024px) {
+  .raffle__header {
+    flex-direction: column;
+    align-items: start;
+    row-gap: 15px;
+    max-width: 460px;
+  }
+}
+@media (max-width: 768px) {
+  .raffle__header {
+    display: block;
+    margin-inline: auto;
+  }
+}
+@media (max-width: 768px) {
+  .raffle__header-image {
+    padding-bottom: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .raffle__input-text, .raffle__input-email {
+    max-width: 300px;
+  }
+}
+.raffle__description {
+  max-width: 952px;
+  padding-block: 40px 98px;
+}
+@media (max-width: 1024px) {
+  .raffle__description {
+    max-width: 460px;
+  }
+}
+@media (max-width: 768px) {
+  .raffle__description {
+    display: block;
+    margin-inline: auto;
+  }
+}
+.raffle__body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 1024px) {
+  .raffle__body {
+    align-items: end;
+  }
+}
+@media (max-width: 768px) {
+  .raffle__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.raffle__images {
+  display: flex;
+}
+@media (max-width: 1024px) {
+  .raffle__images {
+    flex-direction: column;
+    position: absolute;
+    top: 95px;
+    right: 0;
+  }
+}
+@media (max-width: 768px) {
+  .raffle__images {
+    position: static;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+    padding-top: 20px;
+  }
+}
+.raffle__xbox {
+  z-index: 1;
+  margin-right: -100px;
+}
+@media (max-width: 1300px) {
+  .raffle__xbox, .raffle__playstation {
+    width: 320px;
+    height: auto;
+  }
+}
+@media (max-width: 1024px) {
+  .raffle__xbox, .raffle__playstation {
+    width: 370px;
+    height: auto;
+  }
+}
+@media (max-width: 768px) {
+  .raffle__xbox, .raffle__playstation {
+    width: 132px;
+    height: auto;
+  }
+}
+.raffle__form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 35px;
+  align-items: start;
+}
+.raffle__form div:last-child {
+  margin-top: -20px;
+}
+@media (max-width: 768px) {
+  .raffle__form {
+    align-items: center;
+  }
+}
+.raffle__button {
+  color: var(--color-dark);
+  background-color: var(--color-yellow);
+}
+@media (hover: hover) {
+  .raffle__button:hover {
+    color: var(--color-light);
+    background-color: var(--color-gray);
+  }
+}
+@media (hover: none) {
+  .raffle__button:active {
+    color: var(--color-light);
+    background-color: var(--color-gray);
+  }
+}
+.raffle__checkbox-label {
+  font-weight: 300;
+  font-size: 12px;
+}
+.raffle__input-checkbox {
+  color: var(--color-gray);
+}
+.raffle__file-label {
+  display: inline-block;
+  font-weight: 300;
+  text-decoration: underline;
+  padding: 39px 137px;
+  border: var(--border);
+  text-align: center;
+  max-width: 460px;
+}
+@media (max-width: 768px) {
+  .raffle__file-label {
+    padding: 20px 90px;
+    font-size: 12px;
+  }
+}
+.raffle__label-extensions {
+  font-size: 12px;
+}
+@media (max-width: 1024px) {
+  .raffle__label-extensions {
+    display: hidden;
+  }
+}
+.raffle__input-checkbox {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-dark);
+  border: 1px solid var(--color-gray);
+  margin-right: 10px;
+  vertical-align: sub;
+  position: relative;
+}
+.raffle__input-checkbox::before {
+  content: "";
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background-image: url("../../images/Raffle/check.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  scale: 0;
+  margin-top: 1px;
+}
+.raffle__input-checkbox--real:checked + .raffle__input-checkbox::before {
+  scale: 1;
 }/*# sourceMappingURL=styles.css.map */
