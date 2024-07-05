@@ -20,6 +20,7 @@ $mobile: 768px;
   }
 };
 
+
 @mixin hover {
   @media (hover: hover) {
     &:hover {

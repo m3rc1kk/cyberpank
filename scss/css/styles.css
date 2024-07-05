@@ -181,7 +181,23 @@ svg * {
   --transition-duration: .2s;
 }
 
+/*
+
+@mixin abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+@mixin square($size) {
+  width: $size;
+  aspect-ratio: 1;
+}
+
+*/
 body {
+  font-size: clamp(16px, 0.9375vw, 18px);
   font-family: var(--font-family-base);
   font-weight: 400;
   font-size: 18px;
@@ -202,42 +218,65 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-size: clamp(30px, 3.2291666667vw, 62px);
   font-weight: 400;
 }
 
 @font-face {
   font-family: "Roboto";
-  src: url("../fonts/Roboto-Light.woff2") format("woff2");
+  src: url("../../fonts/Roboto-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Roboto";
-  src: url("../fonts/Roboto-Regular.woff2") format("woff2");
+  src: url("../../fonts/Roboto-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Roboto";
-  src: url("../fonts/Roboto-Bold.woff2") format("woff2");
+  src: url("../../fonts/Roboto-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Archangelsk";
-  src: url("../fonts/Archangelsk.woff2") format("woff2");
+  src: url("../../fonts/Archangelsk.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
+.button {
+  background-color: var(--color-dark);
+  color: var(--color-yellow);
+  padding: 19px 50px;
+  font-size: 24px;
+  font-weight: 700;
+  border: 0;
+}
+@media (hover: hover) {
+  .button:hover {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+  }
+}
+@media (hover: none) {
+  .button:active {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+  }
+}
+
 .header {
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
+  z-index: 1;
 }
 .header__inner {
   display: flex;
@@ -245,22 +284,41 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
   padding-top: 20px;
 }
+@media (max-width: 768px) {
+  .header__inner {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+}
 .header__social-list {
   display: flex;
   align-items: center;
   -moz-column-gap: 40px;
        column-gap: 40px;
 }
-.header__social-item:hover {
+@media (max-width: 768px) {
+  .header__social-list {
+    -moz-column-gap: 30px;
+         column-gap: 30px;
+  }
+}
+.header__social-link:hover {
   opacity: 0.7;
+}
+@media (max-width: 768px) {
+  .header__social-image {
+    width: 25px;
+    height: auto;
+  }
 }
 
 .hero {
-  min-height: 1000px;
+  max-height: 1000px;
   background-image: url("../../images/Hero/1.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
 }
 .hero__inner {
   height: 1000px;
@@ -276,22 +334,90 @@ h1, h2, h3, h4, h5, h6 {
   padding: 70px;
   background-color: var(--color-yellow);
   color: var(--color-dark);
+  -webkit-clip-path: polygon(57% 0, 100% 0, 100% 43%, 100% 90%, 90% 100%, 32% 100%, 0 100%, 0 10%, 10% 0);
+          clip-path: polygon(57% 0, 100% 0, 100% 43%, 100% 90%, 90% 100%, 32% 100%, 0 100%, 0 10%, 10% 0);
+}
+@media (max-width: 768px) {
+  .hero__body {
+    padding: 30px 38px;
+    align-items: center;
+    position: absolute;
+    bottom: -40px;
+    right: 0;
+  }
 }
 .hero__title {
   font-family: var(--font-family-alt);
-  font-size: 62px;
   max-width: 484px;
 }
-
-.button {
-  background-color: var(--color-dark);
-  color: var(--color-yellow);
-  padding: 19px 50px;
-  font-size: 24px;
-  font-weight: 700;
-  border: 0;
+@media (max-width: 768px) {
+  .hero__title {
+    text-align: center;
+  }
 }
-.button:hover {
-  background-color: var(--color-light);
+@media (max-width: 768px) {
+  .hero__button {
+    font-size: 20px;
+    padding: 19px 50px;
+  }
+}
+
+.about-game__inner {
+  margin-block: 110px;
+}
+.about-game__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 1024px) {
+  .about-game__list {
+    flex-direction: column;
+    row-gap: 32px;
+  }
+}
+.about-game__first-column {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+}
+@media (max-width: 1024px) {
+  .about-game__first-column {
+    flex-direction: row;
+    -moz-column-gap: 32px;
+         column-gap: 32px;
+  }
+}
+@media (max-width: 768px) {
+  .about-game__first-column {
+    flex-direction: column;
+  }
+}
+.about-game__title {
+  font-family: var(--font-family-alt);
   color: var(--color-dark);
+}
+.about-game__description {
+  color: var(--color-gray);
+  padding-block: 25px 70px;
+  max-width: 952px;
+  line-height: 1.5;
+}
+.about-game__description p span {
+  font-weight: 700;
+  color: var(--color-blue);
+}
+@media (max-width: 1024px) {
+  .about-game__description {
+    max-width: 788px;
+  }
+}
+.about-game__image {
+  -webkit-clip-path: polygon(57% 0, 100% 0, 100% 43%, 100% 85%, 85% 100%, 32% 100%, 0 100%, 0 15%, 15% 0);
+          clip-path: polygon(57% 0, 100% 0, 100% 43%, 100% 85%, 85% 100%, 32% 100%, 0 100%, 0 15%, 15% 0);
+}
+@media (max-width: 1024px) {
+  .about-game__image-large {
+    width: 952px;
+  }
 }/*# sourceMappingURL=styles.css.map */

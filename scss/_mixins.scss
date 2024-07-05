@@ -2,6 +2,12 @@
   font-size: clamp(#{$min}px, #{$max / 1920 * 100}vw, #{$max}px);
 }
 
+@mixin flex-space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 @mixin reset-link {
   color: inherit;
 
@@ -17,11 +23,7 @@
   border: 0;
 }
 
-@mixin flex-space-between {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+/*
 
 @mixin abs-center {
   position: absolute;
@@ -34,3 +36,5 @@
   width: $size;
   aspect-ratio: 1;
 }
+
+*/

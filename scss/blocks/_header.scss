@@ -3,11 +3,17 @@
   left: 0;
   top: 0;
   width: 100%;
+  z-index: 1;
 
   &__inner {
     @include flex-space-between();
 
     padding-top: 20px;
+
+    @include mobile {
+      flex-direction: column;
+      row-gap: 10px;
+    }
   }
 
   &__social {
@@ -15,10 +21,21 @@
       display: flex;
       align-items: center;
       column-gap: 40px;
+
+      @include mobile {
+        column-gap: 30px;
+      }
     }
 
-    &-item:hover {
+    &-link:hover {
       opacity: .7;
+    }
+
+    &-image {
+      @include mobile {
+        width: 25px;
+        height: auto;
+      }
     }
   }
 }

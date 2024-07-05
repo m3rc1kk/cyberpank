@@ -1,0 +1,66 @@
+.about-game {
+  &__inner {
+    margin-block: 110px;
+  }
+
+  &__list {
+    @include flex-space-between;
+    
+    @include tablet {
+      flex-direction: column;
+      row-gap: 32px;
+    }
+
+  }
+
+  &__first-column {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+
+    @include tablet {
+      flex-direction: row;
+      column-gap: 32px;
+    }
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }  
+
+
+  &__title {
+    font-family: var(--font-family-alt);
+    color: var(--color-dark);
+  }
+
+  &__description {
+    
+    color: var(--color-gray);
+    padding-block: 25px 70px;
+    max-width: 952px;
+    line-height: 1.5;
+    
+    p span {
+      font-weight: 700;
+      color: var(--color-blue);
+    }
+
+    @include tablet {
+      max-width: 788px;
+    }
+  }
+  
+  &__image {
+    clip-path: polygon(57% 0, 100% 0, 100% 43%, 100% 85%, 85% 100%, 32% 100%, 0 100%, 0 15%, 15% 0);
+
+    &-large {
+      @include tablet {
+        width: 952px;
+      }
+
+    }
+  }
+
+  
+}
