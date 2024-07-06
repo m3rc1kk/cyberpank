@@ -1,0 +1,101 @@
+.advertising {
+  background-color: var(--color-yellow);
+  padding-block: 140px 80px;
+
+  &__inner {
+    @include flex-space-between;
+
+    column-gap: 32px;
+
+    @include mobile {
+      flex-direction: column;
+      row-gap: 40px;
+    }
+  }
+
+  &__images {
+    display: flex;
+    flex-direction: column;
+    row-gap: 26px;
+    align-items: center;
+  }
+
+  &__monitor {
+    @include tablet {
+      width: 460px;
+      height: auto;
+    }
+    
+    @include mobile {
+      width: 296px;
+      height: auto;
+    }
+  }
+
+  &__logos {
+    display: flex;
+    align-items: center;
+    column-gap: 25px;
+
+    @include tablet {
+      flex-direction: column;
+      row-gap: 25px;
+    }
+
+    @include mobile {
+      flex-direction: row;
+      column-gap: 14px;
+    }
+  }
+
+  &__hp {
+    @include mobile {
+      width: 44px;
+      height: auto;
+    }
+  }
+
+  &__cyberpunk {
+    @include mobile {
+      width: 175px;
+      height: auto;
+    }
+  }
+
+  &__connect {
+    @include mobile {
+      width: 49px;
+      height: auto;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    color: var(--color-dark);
+  }
+
+  &__title {
+    max-width: 560px;
+  }
+
+  &__description {
+    max-width: 624px;
+    padding-block: 25px;
+    line-height: 1.7;
+  }
+
+  &__advantages {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    padding-bottom: 40px;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      column-gap: 14px;
+    }
+  }
+}
